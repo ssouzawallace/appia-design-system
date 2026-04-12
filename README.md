@@ -4,8 +4,6 @@
 
 A cross-platform design system for AppiaCare's mobile and web applications, built on [Material Design](https://material.io) principles.
 
-> **Idioma / Language:** This document is written in English. Portuguese-specific terms are preserved where they reflect the original design vocabulary.
-
 ---
 
 ## Table of Contents

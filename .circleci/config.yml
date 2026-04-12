@@ -17,14 +17,14 @@ jobs:
       - run:
           name: Check for broken image references
           command: |
-            status=0
-            for img in $(grep -oP '!\[.*?\]\(\K[^)]+' README.md); do
+            missing=0
+            for img in $(grep -o '!\[[^]]*\]([^)]*)' README.md | sed 's/.*](//' | sed 's/)$//'); do
               if [ ! -f "$img" ]; then
                 echo "ERROR: Missing image referenced in README.md: $img"
-                status=1
+                missing=1
               fi
             done
-            exit $status
+            exit "$missing"
 
 workflows:
   docs:
